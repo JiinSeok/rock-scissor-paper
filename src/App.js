@@ -69,11 +69,23 @@ function App() {
       <div className='Box App-box'>
         <div className='Box-inner'>
           <div className='App-hands'>
-            <div className='Hand'>
+            <div
+              className={
+                'Hand' +
+                (gameHistory[gameHistory.length - 1] === '나' ? ' winner' : '')
+              }
+            >
               <HandIcon className='Hand-icon' value={hand} />
             </div>
             <div className='App-versus'>VS</div>
-            <div className='Hand'>
+            <div
+              className={
+                'Hand' +
+                (gameHistory[gameHistory.length - 1] === '상대'
+                  ? ' winner'
+                  : '')
+              }
+            >
               <HandIcon className='Hand-icon' value={otherHand} />
             </div>
           </div>
